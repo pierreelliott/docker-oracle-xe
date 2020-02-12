@@ -17,6 +17,9 @@ ENV \
   EM_RESTORE=reconfigureEm.sh \
   ORACLE_XE_RPM=oracle-database-xe-18c-1.0-1.x86_64.rpm \
   CHECK_DB_FILE=checkDBStatus.sh
+  
+# Use second ENV so that variable get substituted (easier to use sqlplus afterwards)
+ENV PATH=$ORACLE_HOME/bin:$PATH
     
 COPY ./files/${ORACLE_XE_RPM} /tmp/
 
